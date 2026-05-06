@@ -1,0 +1,35 @@
+title: "Advanced Navigation Assistance System (ANAS)"
+description: "AI-powered navigation assistance for visually impaired users"
+url: "https://demonking09.github.io"
+baseurl: "/Stage2_Advance_navigation_System"
+repository: "Demonking09/Stage2_Advance_navigation_System"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+
+# Include files
+include:
+  - _pages

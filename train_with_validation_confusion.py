@@ -31,6 +31,11 @@ def save_gradcam(img_tensor, cam, save_path, alpha=0.4):
     # Convert tensor to numpy image
     img_np = img_tensor.permute(1, 2, 0).cpu().numpy()
     img_np = (img_np * 255).astype(np.uint8)
+    
+    # Check for invalid image dimensions (prevent OpenCV resize error)
+    if img_np.shape[0] == 0 or img_np.shape[1] == 0:
+        print(f"⚠️ Skipping Grad-CAM save for {save_path} (invalid image dimensions: {img_np.shape})")
+        return
 
     # Resize CAM to match image size
     if cam is None or cam.size == 0:
@@ -72,6 +77,25 @@ if __name__ == "__main__":
 
     print("✅ Detected Classes:", classes)
     print("Number of classes:", num_classes)
+
+    # Explicit hazard mapping for navigation assistance goals
+    surface_hazard = {
+        "aluminium_foil": {"severity": "unsafe", "description": "slippery surface"},
+        "brown_bread": {"severity": "safe", "description": "normal surface"},
+        "corduroy": {"severity": "caution", "description": "uneven surface"},
+        "cotton": {"severity": "safe", "description": "normal surface"},
+        "cracker": {"severity": "caution", "description": "fragile surface"},
+        "linen": {"severity": "safe", "description": "normal surface"},
+        "orange_peel": {"severity": "caution", "description": "textured surface"},
+        "sandpaper": {"severity": "unsafe", "description": "abrasive surface"},
+        "sponge": {"severity": "caution", "description": "soft or wet-looking surface"},
+        "styrofoam": {"severity": "unsafe", "description": "unstable surface"},
+    }
+
+    def get_hazard_meta(cls_name):
+        return surface_hazard.get(cls_name, {"severity": "unknown", "description": "unknown surface"})
+
+    print("✅ Hazard mapping loaded for navigation risk categories.")
 
     # -----------------------------
     # 3. Train/Validation Split
@@ -222,6 +246,20 @@ if __name__ == "__main__":
     print("\n📊 Per-Class Accuracy:")
     for cls, acc in zip(classes, per_class_acc):
         print(f"{cls}: {acc*100:.2f}%")
+
+    hazard_accuracy = {"safe": [], "caution": [], "unsafe": [], "unknown": []}
+    for cls, acc in zip(classes, per_class_acc):
+        severity = get_hazard_meta(cls)["severity"]
+        hazard_accuracy.setdefault(severity, []).append(acc)
+
+    print("\n📌 Hazard-Grouped Accuracy:")
+    for severity in ["safe", "caution", "unsafe", "unknown"]:
+        values = hazard_accuracy.get(severity, [])
+        if values:
+            print(f"{severity.title()} surface avg accuracy: {np.mean(values)*100:.2f}%")
+        else:
+            print(f"{severity.title()} surface avg accuracy: N/A")
+
     # -----------------------------
     # 7. Confusion Summary Generator
     # -----------------------------
@@ -238,9 +276,10 @@ if __name__ == "__main__":
     # -----------------------------
     with open("diagnostics.csv", mode="w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["Class", "Accuracy (%)"])
+        writer.writerow(["Class", "Accuracy (%)", "Hazard Severity", "Description"])
         for cls, acc in zip(classes, per_class_acc):
-            writer.writerow([cls, f"{acc*100:.2f}"])
+            hazard_meta = get_hazard_meta(cls)
+            writer.writerow([cls, f"{acc*100:.2f}", hazard_meta["severity"], hazard_meta["description"]])
         writer.writerow([])
         writer.writerow(["Actual", "Predicted", "Count"])
         for (actual, predicted), count in top_confusions:

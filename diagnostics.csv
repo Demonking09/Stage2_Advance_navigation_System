@@ -1,80 +1,80 @@
-Class,Accuracy (%)
-aluminium_foil,100.00
-banded,91.30
-blotchy,39.13
-braided,51.85
-brown_bread,100.00
-bubbly,65.22
-bumpy,32.14
-chequered,92.59
-cobwebbed,66.67
-corduroy,100.00
-cotton,100.00
-cracked,82.76
-cracker,100.00
-crosshatched,52.00
-crystalline,89.29
-dotted,68.00
-fabric,40.00
-fibrous,61.90
-flecked,62.50
-foliage,84.21
-freckled,94.44
-frilly,68.97
-gauzy,47.83
-glass,48.00
-grid,71.43
-grooved,63.16
-honeycombed,75.00
-interlaced,80.95
-knitted,70.37
-lacelike,82.61
-leather,75.00
-lined,87.50
-linen,100.00
-marbled,44.00
-matted,66.67
-meshed,37.04
-metal,34.78
-orange_peel,100.00
-paisley,68.00
-paper,61.90
-perforated,55.56
-pitted,29.41
-plastic,57.14
-pleated,50.00
-polka-dotted,56.25
-porous,46.67
-potholed,88.46
-sandpaper,100.00
-scaly,73.91
-smeared,45.45
-spiralled,48.15
-sponge,100.00
-sprinkled,50.00
-stained,34.62
-stone,37.50
-stratified,59.26
-striped,88.00
-studded,75.00
-styrofoam,100.00
-swirly,64.00
-veined,65.22
-waffled,65.22
-water,70.97
-wood,45.00
-woven,73.68
-wrinkled,71.43
-zigzagged,94.74
+Class,Accuracy (%),Hazard Severity,Description
+aluminium_foil,100.00,unsafe,slippery surface
+banded,59.09,unknown,unknown surface
+blotchy,41.38,unknown,unknown surface
+braided,33.33,unknown,unknown surface
+brown_bread,100.00,safe,normal surface
+bubbly,93.33,unknown,unknown surface
+bumpy,26.32,unknown,unknown surface
+chequered,92.31,unknown,unknown surface
+cobwebbed,79.17,unknown,unknown surface
+corduroy,100.00,caution,uneven surface
+cotton,100.00,safe,normal surface
+cracked,73.91,unknown,unknown surface
+cracker,100.00,caution,fragile surface
+crosshatched,48.00,unknown,unknown surface
+crystalline,70.00,unknown,unknown surface
+dotted,76.92,unknown,unknown surface
+fabric,35.29,unknown,unknown surface
+fibrous,62.50,unknown,unknown surface
+flecked,50.00,unknown,unknown surface
+foliage,88.89,unknown,unknown surface
+freckled,85.19,unknown,unknown surface
+frilly,75.00,unknown,unknown surface
+gauzy,62.50,unknown,unknown surface
+glass,80.00,unknown,unknown surface
+grid,42.42,unknown,unknown surface
+grooved,44.00,unknown,unknown surface
+honeycombed,76.92,unknown,unknown surface
+interlaced,80.65,unknown,unknown surface
+knitted,60.00,unknown,unknown surface
+lacelike,86.96,unknown,unknown surface
+leather,44.44,unknown,unknown surface
+lined,78.12,unknown,unknown surface
+linen,100.00,safe,normal surface
+marbled,40.74,unknown,unknown surface
+matted,61.90,unknown,unknown surface
+meshed,43.48,unknown,unknown surface
+metal,40.00,unknown,unknown surface
+orange_peel,100.00,caution,textured surface
+paisley,83.33,unknown,unknown surface
+paper,58.33,unknown,unknown surface
+perforated,42.86,unknown,unknown surface
+pitted,10.53,unknown,unknown surface
+plastic,57.14,unknown,unknown surface
+pleated,61.29,unknown,unknown surface
+polka-dotted,51.72,unknown,unknown surface
+porous,56.67,unknown,unknown surface
+potholed,83.33,unknown,unknown surface
+sandpaper,100.00,unsafe,abrasive surface
+scaly,80.00,unknown,unknown surface
+smeared,45.00,unknown,unknown surface
+spiralled,80.00,unknown,unknown surface
+sponge,100.00,caution,soft or wet-looking surface
+sprinkled,68.42,unknown,unknown surface
+stained,20.83,unknown,unknown surface
+stone,50.00,unknown,unknown surface
+stratified,63.64,unknown,unknown surface
+striped,83.33,unknown,unknown surface
+studded,80.95,unknown,unknown surface
+styrofoam,100.00,unsafe,unstable surface
+swirly,72.00,unknown,unknown surface
+veined,67.86,unknown,unknown surface
+waffled,81.82,unknown,unknown surface
+water,66.67,unknown,unknown surface
+wood,41.67,unknown,unknown surface
+woven,66.67,unknown,unknown surface
+wrinkled,76.47,unknown,unknown surface
+zigzagged,85.00,unknown,unknown surface
 
 Actual,Predicted,Count
-polka-dotted,dotted,7
-dotted,polka-dotted,6
-polka-dotted,perforated,6
-meshed,grid,6
-stained,blotchy,6
+polka-dotted,dotted,14
+pitted,porous,9
+banded,lined,7
+stained,smeared,6
 marbled,blotchy,5
-glass,water,5
-pleated,grooved,4
-bumpy,porous,4
-metal,leather,4
+water,glass,4
+stratified,wood,4
+braided,woven,4
+flecked,porous,4
+metal,wood,4
