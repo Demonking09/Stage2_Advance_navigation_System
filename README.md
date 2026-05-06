@@ -12,6 +12,7 @@ An AI-powered navigation assistance system designed to help visually impaired us
 **Target Users:** Visually impaired individuals  
 **Platform:** Cross-platform (Windows, Linux, macOS, Raspberry Pi)  
 **AI Models:** YOLOv8n for obstacle detection, ResNet50 for surface texture classification  
+**Site is live at:** https://demonking09.github.io/Stage2_Advance_navigation_System/
 
 ### Key Capabilities
 - **Real-time Obstacle Detection:** Identifies persons, furniture, stairs, doors, and other navigation hazards
