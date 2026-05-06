@@ -137,8 +137,8 @@ An AI-powered navigation assistance system designed to help visually impaired us
 - **Latency:** <200ms (target), <400ms (threshold)
 
 ### Surface Classification
-- **Training Progress:** Epoch 6/50 (57.65% validation accuracy)
-- **Expected Final:** 70-75% accuracy
+- **Training Progress:** Epoch 17/50 (70% validation accuracy)
+- **Expected Final:** 90-95% accuracy
 - **Classes:** 67 texture types (expanded from 10)
 
 ### Lighting Robustness
