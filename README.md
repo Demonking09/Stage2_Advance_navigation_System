@@ -203,7 +203,7 @@ Stage2_Advance_navigation_System/
 │   ├── dtd/                         # Describable Textures Dataset
 │   └── image/                       # Test images
 │
-├── Test Scripts/
+├── Test Scripts/                    # 🚧 Under development
 │   ├── quick_test.py                # Component validation
 │   ├── test_proximity_tracker.py     # Tracking unit tests
 │   ├── test_combined_pipeline.py     # Integration tests
@@ -214,7 +214,7 @@ Stage2_Advance_navigation_System/
 │   ├── train_and_test_combined.py   # Combined training pipeline
 │   └── train_texture_cnn.py         # CNN texture training
 │
-├── Documentation/
+├── Documentation/                    # 🚧 Under development
 │   ├── IMPLEMENTATION_SUMMARY.md     # Technical implementation details
 │   ├── QUICK_START.md               # Developer quick start
 │   ├── TESTING_GUIDE.md             # Testing procedures
