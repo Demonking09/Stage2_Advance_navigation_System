@@ -62,9 +62,17 @@ An AI-powered navigation assistance system designed to help visually impaired us
    ```
    - Press 'q' to quit
    - The system will start camera capture and provide real-time audio/haptic feedback
+  
+     
 
 2. **Test components individually:**
    ```bash
+
+   
+> 🚧 **Under Development:** Test suite and hardware interface modules 
+> are planned for upcoming releases. The following commands will be 
+> available soon:
+
    # Quick validation of all components
    python quick_test.py
 
