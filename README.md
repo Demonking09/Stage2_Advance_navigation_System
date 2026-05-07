@@ -5,6 +5,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 
 An AI-powered navigation assistance system designed to help visually impaired users navigate safely through real-world environments. This system combines real-time obstacle detection, surface hazard identification, and multi-modal feedback (audio and haptic) to provide comprehensive navigation support.
+📄 A research paper based on this system is currently under peer review (2025).
 
 ## 🎯 Project Overview
 
@@ -298,7 +299,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Project Lead:** Demonking09  
 **Repository:** [GitHub](https://github.com/Demonking09/Stage2_Advance_navigation_System)  
 **Issues:** [GitHub Issues](https://github.com/Demonking09/Stage2_Advance_navigation_System/issues)
-
+**Email:** Patel.4suraj@gmail.com
+ 
 ---
 
 *This system is designed to assist visually impaired users but should not replace human judgment or professional mobility training. Always test thoroughly in controlled environments before real-world deployment.*
